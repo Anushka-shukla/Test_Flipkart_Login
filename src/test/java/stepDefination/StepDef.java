@@ -21,25 +21,21 @@ public class StepDef {
 	   
 	}
 
-	@When("^user enters UserName and Password and login$")
-	public void user_enters_UserName_and_Password() throws Throwable {
-		
-		driver.findElement(By.xpath("//input[@type='text' and @class='_2zrpKA _1dBPDZ']")).sendKeys("Anushka");
-		
-		driver.findElement(By.xpath("//input[@type='password' and @class='_2zrpKA _3v41xv _1dBPDZ']")).sendKeys("password");
-		
-		driver.findElement(By.xpath("//input[@type='submit' and @class='_2AkmmA _1LctnI _7UHT_c']")).click();
-		
-	}
+@When("^user enters UserName and Password and login\\.$")
+public void user_enters_UserName_and_Password_and_login() throws Throwable {
+	driver.findElement(By.xpath("//input[@type='text' and @class='_2zrpKA _1dBPDZ']")).sendKeys("anushka123");
 	
 	
+	driver.findElement(By.xpath("//input[@type='password' and @class='_2zrpKA _3v41xv _1dBPDZ']")).sendKeys("absnb787AS@");
+	
+	
+	driver.findElement(By.xpath("//button[@type='submit' and @class='_2AkmmA _1LctnI _7UHT_c']")).click();
+	
+}
 
-	@Then("^Login should be successful and verify the error message$")
-	public void login_should_be_successful_and_verify_the_error_message() throws Throwable {
-		assertEquals("Please enter valid email/mobile number" , driver.findElement(By.xpath("//span[2]/span")).getText());
-	   
-	}
-
-
-
+@Then("^Login should be successful and verify the error message\\.$")
+public void login_should_be_successful_and_verify_the_error_message() throws Throwable {
+	assertEquals("Please enter valid Email ID/Mobile number"  , driver.findElement(By.xpath("//span[2]/span")).getText());
+   
+}
 }
